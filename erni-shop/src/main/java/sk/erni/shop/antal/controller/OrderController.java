@@ -15,6 +15,10 @@ import javax.ws.rs.core.MediaType;
 
 import sk.erni.shop.antal.model.ShopOrder;
 
+/**
+ * JAWS-RS Jersey 2 Get method for all shoporder objects
+ * @author Andrej Antal
+ */
 @Path("shoporder")
 public class OrderController {
 	
