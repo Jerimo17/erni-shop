@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+  	<script src="pullData.js"></script>
+  	<link rel="stylesheet" type="text/css" href="layout.css">
+  </head>
+  <body>
+  <div ng-app="pullDataFromOrder" ng-controller="orders" id="wrapper">
+  <div id="keywords">
+	  <form>
+	    <div>
+	        <input type="text" placeholder="Search in Customers" ng-model="searchName">     
+	    </div>
+	  </form>
+  </div>
+  <table id="keywords">
+    <thead>
+    	<th>
+          <a href="#" ng-click="sortType = 'name'; sortReverse = !sortReverse">
+            Customer Name
+            <span ng-show="sortType == 'name' && !sortReverse"></span>
+            <span ng-show="sortType == 'name' && sortReverse"></span>
+          </a>
+    	</th>
+    	<th>
+    		<a href="#" ng-click="sortType = 'article'; sortReverse = !sortReverse">
+    		Article name
+    		<span ng-show="sortType == 'article' && !sortReverse"></span>
+            <span ng-show="sortType == 'article' && sortReverse""></span>
+    		</a>
+    	</th>
+    	<th>
+    		Order price
+    	</th>
+    	<th>
+    		Email
+    	</th>
+    	<th>
+    		Phone number
+    	</th>
+    	<th>
+    		Address
+    	</th>
+     </thead>
+    <tbody ng-repeat="data in datas | orderBy:sortType:sortReverse | filter:searchName">
+    	<td class="lalign">{{data.customer.name}}</td>
+    	<td>{{data.article}}</td>
+    	<td>{{data.price}}</td>
+    	<td>{{data.customer.email}}</td>
+    	<td>{{data.customer.phoneNumber}}</td>
+    	<td>{{data.customer.address}}</td>
+    </tbody>    
+  </table>
+  </div>
+  </body>
+</html>
