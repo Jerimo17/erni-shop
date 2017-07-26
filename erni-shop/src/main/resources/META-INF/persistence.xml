@@ -27,8 +27,6 @@
       <!-- The datasource is deployed as WEB-INF/erni-shop-ds.xml, you
          can find it in the source at src/main/webapp/WEB-INF/erni-shop-ds.xml -->
       <jta-data-source>java:jboss/datasources/erni-shopDS</jta-data-source>
-	  <class>sk.erni.shop.antal.model.Customer</class>
-	  <class>sk.erni.shop.antal.model.ShopOrder</class>
 	  
       <properties>
          <!-- Properties for Hibernate -->
